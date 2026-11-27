@@ -1,0 +1,1418 @@
+/* =================================
+   PALETA DE CORES (alto contraste, para usar ao sol)
+   Para mudar uma cor em toda a app, basta alterá-la aqui.
+================================= */
+
+
+:root {
+    --roxo: #0B4F9C;
+    --roxo-premido: #083C78;
+    --roxo-escuro: #072A52;
+    --roxo-claro: #DCEBFB;
+
+    --texto: #111114;
+    --texto-secundario: #3D3D45;
+    --borda: #8A8A94;
+    --borda-forte: #6E6E78;
+    --fundo: #FFFFFF;
+    --fundo-secundario: #EDEDF0;
+
+    --sucesso: #08692F;
+    --erro: #B3001B;
+    --aviso-fundo: #FFB000;
+    --aviso-texto: #8A5A00;
+
+    --conjunta: #006560;
+    --conjunta-claro: #D2EFEC;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--fundo-secundario);
+    color: var(--texto);
+}
+
+button {
+    font: inherit;
+    cursor: pointer;
+}
+
+/* Cabeçalho */
+
+.top-bar {
+    border-bottom: 1px solid var(--borda);
+    background-color: #fff;
+}
+
+.back-button {
+    border: none;
+    background: none;
+    color: var(--texto);
+    font-size: 25px;
+}
+
+.header-title {
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.saldo {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Logótipo */
+
+.logo h1 {
+    color: var(--texto);
+    font-size: 30px;
+}
+
+.logo h1 span {
+    font-size: 35px;
+}
+
+/* Festival em destaque */
+
+.featured-card {
+    border: none;
+    border-radius: 15px;
+    background: linear-gradient(135deg, var(--roxo), var(--roxo-premido));
+    box-shadow: 0 4px 10px rgb(0 0 0 / 12%);
+    color: #fff;
+    font-size: 23px;
+    font-weight: bold;
+}
+
+
+/* Cartões dos festivais */
+
+.festival-card {
+    border: none;
+    border-radius: 12px;
+    background-color: var(--roxo-claro);
+    box-shadow: 0 3px 7px rgb(0 0 0 / 8%);
+    color: var(--roxo-escuro);
+    font-size: 17px;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+/* Botão adicionar festival */
+
+.add-card {
+    background-color: var(--texto);
+    color: #fff;
+}
+
+
+.card-symbol {
+    font-size: 28px;
+}
+
+/* Menu inferior */
+
+.bottom-nav {
+    border-top: 1px solid var(--borda);
+    background-color: #fff;
+}
+
+.nav-button {
+    border: none;
+    background: none;
+    color: var(--texto-secundario);
+    font-size: 11px;
+}
+
+.nav-icon {
+    font-size: 25px;
+}
+
+.nav-button.active {
+    color: var(--roxo);
+}
+
+/* Adaptação visual para ecrãs maiores */
+
+@media (min-width: 600px) {
+
+    .app {
+        border-radius: 15px;
+        box-shadow: 0 0 15px rgb(0 0 0 / 12%);
+    }
+
+}
+
+/* styles da carteira */
+
+/* Cabeçalho */
+
+.barra-superior {
+    background-color: #fff;
+    border-bottom: 1px solid var(--borda);
+}
+
+.botao-voltar {
+    color: var(--texto);
+    font-size: 25px;
+    text-decoration: none;
+}
+
+.titulo-cabecalho {
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.saldo-cabecalho {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Cartão do saldo */
+
+.cartao-saldo {
+    background-color: var(--roxo-claro);
+    border-radius: 12px;
+    box-shadow: 0 3px 7px rgb(0 0 0 / 8%);
+}
+
+.informacao-saldo h2 {
+    font-size: 17px;
+    font-weight: normal;
+}
+
+.valor-saldo {
+    color: var(--roxo-escuro);
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.botao-ocultar-saldo {
+    border: none;
+    background: none;
+    color: var(--roxo-escuro);
+    font-size: 23px;
+    cursor: pointer;
+}
+
+/* Botões das operações */
+
+.botao-operacao {
+    border: 1px solid var(--borda-forte);
+    border-radius: 5px;
+    background-color: var(--roxo-claro);
+    color: var(--texto);
+    font-size: 15px;
+    cursor: pointer;
+}
+
+
+.icone-operacao {
+    font-size: 18px;
+}
+
+/* Últimos movimentos */
+
+.secao-movimentos h2 {
+    color: var(--texto);
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.movimento {
+    border-bottom: 1px solid var(--borda);
+    font-size: 14px;
+}
+
+.nome-movimento {
+    color: var(--texto);
+}
+
+.valor-negativo {
+    color: var(--erro);
+    font-weight: bold;
+}
+
+.valor-positivo {
+    color: var(--sucesso);
+    font-weight: bold;
+}
+
+/* Menu inferior */
+
+.barra-navegacao {
+    background-color: #fff;
+    border-top: 1px solid var(--borda);
+}
+
+.botao-navegacao {
+    color: var(--texto-secundario);
+    font-size: 11px;
+    text-decoration: none;
+}
+
+.icone-navegacao {
+    font-size: 25px;
+}
+
+.botao-navegacao.ativo {
+    color: var(--roxo);
+}
+
+/* Ecrãs maiores */
+
+@media (min-width: 600px) {
+
+    .app,
+    .aplicacao {
+        border-radius: 28px;
+        box-shadow: 0 0 15px rgb(0 0 0 / 12%);
+    }
+
+}
+
+
+
+/* =================================
+   PÁGINA DE DEPÓSITO - STYLES
+================================= */
+
+/* Título */
+
+.titulo-deposito {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.subtitulo-deposito {
+    font-size: 15px;
+    color: var(--texto-secundario);
+}
+
+/* Botões de valores */
+
+.botao-valor {
+    border: 1px solid var(--borda-forte);
+    border-radius: 5px;
+    background-color: var(--roxo-claro);
+    color: var(--texto);
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.botao-valor.selecionado {
+    background-color: var(--roxo);
+    color: #fff;
+    border-color: var(--roxo);
+}
+
+/* Campo personalizado */
+
+.campo-valor-personalizado {
+    border: 1px solid var(--borda-forte);
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.campo-valor-personalizado input {
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 16px;
+}
+
+.campo-valor-personalizado span {
+    padding: 0 12px;
+    font-weight: bold;
+}
+
+/* Dropdown */
+
+.campo-metodo-pagamento select {
+    border: 1px solid var(--borda-forte);
+    border-radius: 5px;
+    background-color: var(--roxo-claro);
+    color: var(--texto);
+    font-size: 15px;
+    cursor: pointer;
+}
+
+/* Botão confirmar */
+
+.botao-confirmar-deposito {
+    border: none;
+    border-radius: 8px;
+    background-color: var(--roxo);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Botões de pagamento (QR e NFC) */
+
+.botao-pagamento {
+    display: block;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: transform 0.15s;
+}
+
+.botao-pagamento:active {
+    transform: scale(0.95);
+}
+
+.botao-pagamento img {
+    display: block;
+}
+
+.QR-code .botao-pagamento img {
+    width: 220px;
+    max-width: 100%;
+    height: auto;
+}
+
+.NFC .botao-pagamento {
+    height: 100%;
+}
+
+.NFC .botao-pagamento img {
+    width: auto;
+    height: 100%;
+}
+
+/* Pop-up */
+
+.popup-fundo {
+    position: absolute;
+    inset: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(0 0 0 / 60%);
+}
+
+.popup-fundo[hidden] {
+    display: none;
+}
+
+.popup {
+    width: 85%;
+    max-width: 320px;
+    padding: 24px;
+    border-radius: 15px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.popup h3 {
+    color: var(--roxo-escuro);
+}
+
+.popup p {
+    margin-top: 8px;
+    color: var(--texto-secundario);
+}
+
+.popup .popup-valor {
+    color: var(--erro);
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.popup-fechar {
+    margin-top: 20px;
+    padding: 10px 28px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--roxo);
+    color: #fff;
+    font-weight: bold;
+}
+
+
+/* =================================
+   PÁGINA PERFIL - STYLES
+================================= */
+
+.titulo-perfil {
+    color: var(--texto);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Cartão do utilizador */
+
+.cartao-perfil {
+    background-color: var(--roxo-claro);
+    border-radius: 12px;
+    box-shadow: 0 3px 7px rgb(0 0 0 / 8%);
+}
+
+.avatar-perfil {
+    background-color: var(--roxo);
+    border-radius: 50%;
+    color: #fff;
+    font-size: 35px;
+}
+
+.nome-perfil {
+    color: var(--roxo-escuro);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.subtitulo-perfil {
+    color: var(--texto-secundario);
+    font-size: 13px;
+}
+
+/* Informações pessoais */
+
+.secao-informacoes-perfil h3 {
+    color: var(--texto);
+    font-size: 17px;
+}
+
+.informacoes-perfil {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 3px 7px rgb(0 0 0 / 8%);
+}
+
+.campo-perfil {
+    border-bottom: 1px solid var(--borda);
+}
+
+.campo-perfil:last-child {
+    border-bottom: none;
+}
+
+.etiqueta-perfil {
+    color: var(--texto-secundario);
+    font-size: 12px;
+}
+
+.valor-perfil {
+    color: var(--texto);
+    font-size: 15px;
+    font-weight: bold;
+}
+
+/* Botão editar perfil */
+
+.botao-editar-perfil {
+    border: none;
+    border-radius: 8px;
+    background-color: var(--roxo);
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.botao-editar-perfil:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+/* =================================
+   AUTENTICAÇÃO / LOG-IN DA BANDY
+================================= */
+
+/* Esconder elementos não visíveis */
+[hidden] {
+    display: none !important;
+}
+
+/* Fundo escuro do pop-up */
+.modal-bandy-fundo {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgb(0 0 0 / 60%);
+}
+
+/* Caixa principal */
+.modal-bandy-caixa {
+    position: relative;
+
+    width: 100%;
+    max-width: 370px;
+    max-height: 90vh;
+
+    padding: 26px 22px;
+    overflow-y: auto;
+
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgb(0 0 0 / 18%);
+
+    text-align: center;
+}
+
+/* Título */
+.modal-bandy-caixa h2 {
+    margin: 5px 0 15px;
+
+    color: var(--roxo-escuro);
+    font-size: 21px;
+}
+
+/* Texto */
+.modal-bandy-caixa p {
+    margin-bottom: 18px;
+
+    color: var(--texto-secundario);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Botão X */
+.modal-bandy-x {
+    position: absolute;
+    right: 12px;
+    top: 8px;
+
+    padding: 4px 8px;
+
+    border: none;
+    background: transparent;
+
+    color: var(--texto-secundario);
+    font-size: 26px;
+}
+
+/* Ícone de bloqueio */
+.modal-bandy-icone {
+    margin-bottom: 12px;
+
+    color: var(--roxo);
+    font-size: 33px;
+}
+
+/* Botões */
+.modal-bandy-botao,
+.modal-bandy-secundario {
+    width: 100%;
+    min-height: 44px;
+
+    margin-top: 8px;
+    padding: 10px;
+
+    border: none;
+    border-radius: 8px;
+
+    font-weight: bold;
+}
+
+.modal-bandy-botao {
+    background-color: var(--roxo);
+    color: white;
+}
+
+
+.modal-bandy-botao:disabled {
+    opacity: 0.6;
+    cursor: progress;
+}
+
+.modal-bandy-secundario {
+    background-color: var(--roxo-claro);
+    color: var(--roxo-escuro);
+}
+
+/* Separadores Log-In e Registo */
+.modal-bandy-separadores {
+    display: flex;
+    gap: 7px;
+
+    margin: 18px 0;
+}
+
+.modal-bandy-separadores button {
+    flex: 1;
+
+    padding: 11px;
+
+    border: none;
+    border-radius: 8px;
+
+    background-color: var(--roxo-claro);
+    color: var(--roxo-escuro);
+}
+
+.modal-bandy-separadores button.selecionado {
+    background-color: var(--roxo);
+    color: #fff;
+}
+
+/* Formulário */
+.formulario-auth {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    text-align: left;
+}
+
+.formulario-auth label {
+    display: block;
+
+    color: var(--roxo-escuro);
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.formulario-auth input,
+.formulario-auth select {
+    width: 100%;
+
+    margin-top: 5px;
+    padding: 11px;
+
+    border: 1px solid var(--borda-forte);
+    border-radius: 8px;
+
+    background-color: white;
+    color: var(--texto);
+    font-size: 15px;
+}
+
+/* Mensagens de erro */
+.formulario-auth .erro-auth {
+    margin: 0;
+    color: var(--erro);
+}
+
+/* Botão de submissão */
+.formulario-auth .modal-bandy-botao {
+    margin-top: 8px;
+}
+
+/* Link para iniciar sessão no lugar do saldo */
+
+.link-iniciar-sessao {
+    color: var(--roxo);
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+/* =================================
+   PÁGINA CONTA CONJUNTA
+================================= */
+
+[hidden] {
+    display: none !important;
+}
+
+.titulo-conta-conjunta {
+    margin-bottom: 8px;
+    font-size: 20px;
+}
+
+.texto-conta-conjunta {
+    margin-bottom: 8px;
+    color: var(--texto-secundario);
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.titulares-conta {
+    margin-bottom: 20px;
+    color: var(--texto-secundario);
+    font-size: 14px;
+}
+
+.formulario-conta {
+    margin-bottom: 25px;
+}
+
+.formulario-conta button {
+    font-size: 100%;
+}
+
+.formulario-conta .botao-secundario {
+    margin-top: 8px;
+    border: 1.5px solid var(--roxo);
+    background: #fff;
+    color: var(--roxo);
+}
+
+.mensagem-conta {
+    min-height: 18px;
+    color: var(--erro);
+    font-size: 13px;
+}
+
+.mensagem-conta.sucesso {
+    color: var(--sucesso);
+}
+
+.botao-operacao-perigo {
+    border-color: var(--erro);
+    color: var(--erro);
+}
+
+.formulario-conta .botao-perigo {
+    background: var(--erro);
+}
+
+
+/* =================================
+   PÁGINA DO MÉTODO DE PAGAMENTO
+================================= */
+
+.conteudo-metodo {
+    width: 100%;
+    padding: 20px 25px;
+}
+
+.resumo-deposito {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 18px 0 20px;
+    padding: 15px;
+    border-radius: 12px;
+    background-color: var(--roxo-claro);
+    color: var(--roxo-escuro);
+}
+
+.resumo-deposito strong {
+    font-size: 22px;
+}
+
+.dados-multibanco {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+    border: 1.5px solid var(--borda-forte);
+    border-radius: 12px;
+    background: #fff;
+}
+
+.dados-multibanco div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.dados-multibanco dt {
+    color: var(--texto-secundario);
+}
+
+.dados-multibanco dd {
+    font-weight: bold;
+}
+
+.nota-simulacao {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.ligacao-botao {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+}
+
+a.botao-secundario {
+    margin-top: 8px;
+    padding: 12px;
+    border: 1.5px solid var(--roxo);
+    border-radius: 12px;
+    background: #fff;
+    color: var(--roxo);
+    font-weight: 600;
+}
+
+a.popup-fechar {
+    display: inline-block;
+}
+
+
+/* =================================
+   CONFIRMAÇÃO E NOTIFICAÇÃO DE TRANSFERÊNCIA
+================================= */
+
+.popup-botoes {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.popup-botoes .popup-fechar {
+    flex: 1;
+    margin-top: 0;
+    padding: 10px 12px;
+}
+
+.popup .popup-cancelar {
+    border: 1.5px solid var(--roxo);
+    background-color: #fff;
+    color: var(--roxo);
+}
+
+.notificacao {
+    position: absolute;
+    top: 62px;
+    right: 12px;
+    left: 12px;
+    z-index: 120;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 12px 14px;
+    border-left: 5px solid var(--sucesso);
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 14px rgb(0 0 0 / 25%);
+}
+
+.notificacao-texto {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    color: var(--texto);
+    font-size: 14px;
+}
+
+.notificacao-texto strong {
+    color: var(--sucesso);
+}
+
+.notificacao-fechar {
+    border: none;
+    background: none;
+    color: var(--texto-secundario);
+    font-size: 22px;
+    line-height: 1;
+}
+
+
+/* =================================
+   PÁGINA ADICIONAR FESTIVAL
+================================= */
+
+.titulo-festivais {
+    color: var(--texto);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.secao-festivais h2 {
+    color: var(--texto);
+    font-size: 17px;
+    font-weight: bold;
+}
+
+/* Pesquisa */
+
+.campo-pesquisa {
+    border: 1px solid var(--borda-forte);
+    border-radius: 5px;
+    background-color: #fff;
+    color: var(--texto-secundario);
+}
+
+.campo-pesquisa input {
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--texto);
+    font-size: 16px;
+}
+
+.campo-pesquisa:focus-within {
+    border-color: var(--roxo);
+}
+
+/* Cartões dos festivais */
+
+.cartao-festival {
+    border-radius: 12px;
+    background-color: var(--roxo-claro);
+    box-shadow: 0 3px 7px rgb(0 0 0 / 8%);
+    color: var(--roxo-escuro);
+    text-decoration: none;
+    transition: transform 0.15s;
+}
+
+.cartao-festival:active {
+    transform: scale(0.98);
+}
+
+.iniciais-festival {
+    border-radius: 12px;
+    background-color: var(--roxo);
+    color: #fff;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.nome-festival {
+    color: var(--roxo-escuro);
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.datas-festival {
+    color: var(--texto-secundario);
+    font-size: 13px;
+}
+
+.seta-festival {
+    color: var(--roxo);
+    font-size: 16px;
+}
+
+.sem-resultados {
+    color: var(--texto-secundario);
+    font-size: 14px;
+}
+
+
+/* =================================
+   PÁGINA ADICIONAR BILHETE
+================================= */
+
+.titulo-bilhete {
+    color: var(--texto);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.subtitulo-bilhete {
+    color: var(--texto-secundario);
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+/* Separadores */
+
+.separadores-bilhete button {
+    border: none;
+    border-radius: 8px;
+    background-color: var(--roxo-claro);
+    color: var(--roxo-escuro);
+    font-size: 15px;
+}
+
+.separadores-bilhete button.selecionado {
+    background-color: var(--roxo);
+    color: #fff;
+}
+
+/* Campo do código */
+
+.formulario-bilhete label {
+    color: var(--roxo-escuro);
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.formulario-bilhete input[type="text"] {
+    border: 1px solid var(--borda-forte);
+    border-radius: 8px;
+    background-color: #fff;
+    color: var(--texto);
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.formulario-bilhete input[type="text"]::placeholder {
+    letter-spacing: normal;
+    text-transform: none;
+}
+
+.formulario-bilhete input[type="text"]:focus {
+    border-color: var(--roxo);
+    outline: none;
+}
+
+/* Leitor de QR */
+
+.leitor-qr {
+    border-radius: 12px;
+    background-color: var(--roxo-claro);
+    box-shadow: 0 3px 7px rgb(0 0 0 / 8%);
+    color: var(--roxo-escuro);
+    font-size: 14px;
+}
+
+.leitor-qr-vazio {
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+}
+
+.moldura-qr i {
+    color: var(--roxo);
+    font-size: 48px;
+}
+
+.moldura-qr {
+    border: 3px solid #fff;
+    border-radius: 12px;
+    box-shadow: 0 0 0 999px rgb(0 0 0 / 35%);
+}
+
+.botao-secundario-bilhete {
+    border: 1.5px solid var(--roxo);
+    border-radius: 8px;
+    background-color: #fff;
+    color: var(--roxo);
+    font-size: 15px;
+    font-weight: bold;
+}
+
+/* Confirmar */
+
+.botao-confirmar-bilhete {
+    border: none;
+    border-radius: 8px;
+    background-color: var(--roxo);
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.botao-confirmar-bilhete:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+
+/* =================================
+   PÁGINA DO FESTIVAL
+================================= */
+
+.titulo-festival {
+    color: var(--texto);
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* Cartaz (substitui por uma imagem, se tiveres) */
+
+.cartaz-festival {
+    border-radius: 15px;
+    background: linear-gradient(135deg, var(--roxo), var(--roxo-premido));
+    box-shadow: 0 4px 10px rgb(0 0 0 / 12%);
+    color: #fff;
+    text-align: center;
+}
+
+.cartaz-iniciais {
+    font-size: 48px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.cartaz-nome {
+    font-size: 17px;
+    opacity: 0.9;
+}
+
+.detalhes-festival li {
+    color: var(--texto);
+    font-size: 16px;
+}
+
+.detalhes-festival i {
+    color: var(--roxo);
+    font-size: 18px;
+}
+
+.mapa-festival {
+    border-radius: 12px;
+    background-color: var(--roxo-claro);
+    box-shadow: 0 3px 7px rgb(0 0 0 / 8%);
+}
+
+.mapa-festival iframe {
+    border: none;
+}
+
+.ligacao-mapa {
+    color: var(--roxo);
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.botao-comprar-bilhete {
+    border-radius: 8px;
+    background-color: var(--roxo);
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* =================================
+   PÁGINA COMPRAR BILHETE
+================================= */
+
+.etiqueta-compra {
+    color: var(--roxo-escuro);
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.opcao-bilhete {
+    border: 1px solid var(--borda-forte);
+    border-radius: 12px;
+    background-color: var(--roxo-claro);
+    color: var(--roxo-escuro);
+}
+
+.opcao-bilhete strong {
+    font-size: 16px;
+}
+
+.opcao-bilhete small {
+    color: var(--texto-secundario);
+    font-size: 13px;
+}
+
+.opcao-preco {
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.opcao-bilhete.selecionado {
+    border-color: var(--roxo);
+    background-color: var(--roxo);
+    color: #fff;
+}
+
+.opcao-bilhete.selecionado small {
+    color: var(--roxo-claro);
+}
+
+.quantidade-bilhete button {
+    border: 1px solid var(--borda-forte);
+    border-radius: 50%;
+    background-color: var(--roxo-claro);
+    color: var(--roxo-escuro);
+    font-size: 22px;
+}
+
+.quantidade-bilhete span {
+    color: var(--texto);
+    font-size: 22px;
+    font-weight: bold;
+}
+
+
+/* =================================
+   ESCOLHA DO DIA DO BILHETE
+================================= */
+
+.botao-dia {
+    border: 1px solid var(--borda-forte);
+    border-radius: 5px;
+    background-color: var(--roxo-claro);
+    color: var(--texto);
+    font-size: 15px;
+}
+
+.botao-dia.selecionado {
+    border-color: var(--roxo);
+    background-color: var(--roxo);
+    color: #fff;
+}
+
+.nota-dia {
+    color: var(--texto-secundario);
+    font-size: 12px;
+}
+
+
+/* =================================
+   FESTIVAIS COM BILHETE (INÍCIO)
+================================= */
+
+.featured-card small {
+    font-size: 14px;
+    font-weight: normal;
+    opacity: 0.9;
+}
+
+.festival-card small {
+    color: var(--texto-secundario);
+    font-size: 12px;
+    font-weight: normal;
+}
+
+
+/* =================================
+   REMOVER FESTIVAL
+================================= */
+
+.info-bilhetes {
+    color: var(--sucesso);
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.botao-remover-festival {
+    border: 1.5px solid var(--erro);
+    border-radius: 8px;
+    background-color: #fff;
+    color: var(--erro);
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.popup .popup-perigo {
+    background-color: var(--erro);
+}
+
+
+/* =================================
+   BILHETES DO FESTIVAL
+================================= */
+
+.bilhetes-festival h2 {
+    color: var(--texto);
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.cartao-bilhete {
+    border-radius: 12px;
+    background-color: var(--roxo-claro);
+    box-shadow: 0 3px 7px rgb(0 0 0 / 8%);
+    color: var(--roxo-escuro);
+}
+
+.qr-bilhete {
+    border-radius: 8px;
+    background-color: #fff;
+    image-rendering: pixelated;
+}
+
+.botao-zoom-qr {
+    border: none;
+    border-radius: 50%;
+    background-color: var(--roxo);
+    box-shadow: 0 2px 5px rgb(0 0 0 / 25%);
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.botao-zoom-qr:focus-visible {
+    outline: 2px solid var(--roxo-escuro);
+    outline-offset: 2px;
+}
+
+.zoom-qr-imagem {
+    border-radius: 8px;
+    background-color: #fff;
+    image-rendering: pixelated;
+}
+
+.zoom-qr-codigo {
+    color: var(--texto-secundario);
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.texto-bilhete strong {
+    font-size: 16px;
+}
+
+.texto-bilhete span {
+    color: var(--texto-secundario);
+    font-size: 14px;
+}
+
+.texto-bilhete small {
+    color: var(--texto-secundario);
+    font-size: 12px;
+    letter-spacing: 1px;
+    word-break: break-all;
+}
+
+
+/* =================================
+   COR DOS POP-UPS
+   verde: aumenta o saldo  |  vermelho: reduz o saldo
+================================= */
+
+/* Verde (depósitos) */
+
+.popup.popup-positivo {
+    border-top: 6px solid var(--sucesso);
+}
+
+.popup-positivo h3,
+.popup-positivo .popup-valor {
+    color: var(--sucesso);
+}
+
+.popup-positivo .popup-fechar {
+    background-color: var(--sucesso);
+}
+
+.popup-positivo .popup-fechar:focus-visible {
+    outline: 2px solid var(--sucesso);
+    outline-offset: 2px;
+}
+
+/* Vermelho (pagamentos, transferências e compras) */
+
+.popup.popup-negativo {
+    border-top: 6px solid var(--erro);
+}
+
+.popup-negativo h3,
+.popup-negativo .popup-valor {
+    color: var(--erro);
+}
+
+.popup-negativo .popup-fechar {
+    background-color: var(--erro);
+}
+
+.popup-negativo .popup-cancelar {
+    border: 1.5px solid var(--erro);
+    background-color: #fff;
+    color: var(--erro);
+}
+
+.popup-negativo .popup-fechar:focus-visible {
+    outline: 2px solid var(--erro);
+    outline-offset: 2px;
+}
+
+
+/* =================================
+   PAGAMENTO COM CONTA CONJUNTA
+================================= */
+
+.subtitulo-pagamento {
+    color: var(--texto-secundario);
+    font-size: 14px;
+    font-weight: bold;
+}

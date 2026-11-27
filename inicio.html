@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BanDy</title>
+
+    <link rel="stylesheet" href="./css/positions.css">
+    <link rel="stylesheet" href="./css/styles.css">
+
+
+    <script src="js/autenticacao.js" defer></script>
+    <script src="js/saldo.js" defer></script>
+    <script src="js/festivais.js" defer></script>
+    <script src="js/inicio.js" defer></script>
+
+    <script src="https://kit.fontawesome.com/81afda5663.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <main class="app">
+
+        <!-- Cabeçalho -->
+        <header class="top-bar">
+            <button class="back-button" data-action="back">←</button>
+            <span class="titulo-cabecalho">
+                BanDy
+            </span>
+
+            <span class="saldo-cabecalho" data-saldo>
+                0,00 €
+            </span>
+        </header>
+
+        <!-- Logótipo -->
+        <section class="logo">
+            <h1>♫ BanDy APP</h1>
+        </section>
+
+        <!-- Festival em destaque -->
+        <section class="featured-section">
+            <button class="featured-card" id="festival-atual" data-festival="Festival Atual">
+                Festival Atual
+            </button>
+        </section>
+
+        <!-- Cartões dos festivais -->
+        <section class="festivals">
+
+            <button class="festival-card add-card" data-action="add-festival">
+                <span>+</span>
+                <span>Adicionar Festival</span>
+            </button>
+
+            <button class="festival-card" id="festival-futuro" data-festival="Festival Futuro">
+                Festival Futuro
+            </button>
+
+        </section>
+
+        <!-- Menu inferior -->
+        <nav class="barra-navegacao">
+
+            <a href="inicio.html" class="botao-navegacao ativo">
+                <span class="icone-navegacao"><i class="fa-solid fa-house"></i></span>
+                <span>Início</span>
+            </a>
+
+            <a href="carteira.html" class="botao-navegacao">
+                <span class="icone-navegacao"><i class="fa-solid fa-wallet"></i></span>
+                <span>Carteira</span>
+            </a>
+
+            <a href="perfil.html" class="botao-navegacao">
+                <span class="icone-navegacao"><i class="fa-solid fa-user"></i></span>
+                <span>Perfil</span>
+            </a>
+
+        </nav>
+
+    </main>
+
+</body>
+</html>
+

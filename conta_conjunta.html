@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BanDy - Conta Conjunta</title>
+
+    <!-- Ficheiros CSS -->
+    <link rel="stylesheet" href="css/positions.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- JavaScript -->
+
+    <script src="js/autenticacao.js" defer></script>
+    <script src="js/saldo.js" defer></script>
+    <script src="js/carteira.js" defer></script>
+    <script src="js/conta_conjunta.js" defer></script>
+
+    <!-- Script para ícones -->
+    <script src="https://kit.fontawesome.com/81afda5663.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <main class="aplicacao">
+
+        <!-- Cabeçalho -->
+        <header class="barra-superior">
+
+            <a href="carteira.html" class="botao-voltar">
+                ←
+            </a>
+
+            <span class="titulo-cabecalho">
+                BanDy
+            </span>
+
+            <span class="saldo-cabecalho" data-saldo>
+                0,00 €
+            </span>
+        </header>
+
+        <section class="conteudo-carteira">
+
+            <!-- Ainda sem conta conjunta: formulário de criação -->
+            <section id="sem-conta" hidden>
+
+                <p class="mensagem-conta sucesso" id="aviso-conta-eliminada" role="status"></p>
+
+                <h2 class="titulo-conta-conjunta">Criar conta conjunta</h2>
+
+                <p class="texto-conta-conjunta">
+                    Partilha um saldo com outro utilizador BanDy.
+                    Os dois podem depositar, levantar e ver os movimentos.
+                </p>
+
+                <form id="formulario-criar-conta"
+                      class="formulario-transferencia formulario-conta"
+                      novalidate>
+
+                    <label for="nome-conta">Nome da conta</label>
+                    <input id="nome-conta" type="text" maxlength="30"
+                           placeholder="Ex.: Festival com o Rui">
+
+                    <label for="email-titular">Email do outro titular</label>
+                    <input id="email-titular" type="email"
+                           placeholder="email@exemplo.com">
+
+                    <p class="mensagem-conta" id="erro-criar" role="alert"></p>
+
+                    <button type="submit">Criar conta</button>
+
+                </form>
+
+            </section>
+
+
+            <!-- Conta conjunta existente -->
+            <section id="com-conta" hidden>
+
+                <section class="cartao-saldo">
+
+                    <div class="informacao-saldo">
+
+                        <div>
+                            <h2 id="nome-conta-conjunta">Conta Conjunta</h2>
+
+                            <p class="valor-saldo" id="saldo-conjunta">
+                                0,00 €
+                            </p>
+                        </div>
+
+                        <button class="botao-ocultar-saldo"
+                                type="button"
+                                aria-label="Ocultar saldo"
+                                data-acao="ocultar-saldo">
+                            ◉
+                        </button>
+
+                    </div>
+
+                </section>
+
+                <p class="titulares-conta" id="titulares-conta"></p>
+
+                <!-- Operações da conta conjunta -->
+                <section class="operacoes-carteira">
+
+                    <button class="botao-operacao"
+                            type="button"
+                            data-conjunta="depositar">
+                        <span>Depositar na conta conjunta</span>
+                        <span class="icone-operacao"><i class="fa-solid fa-piggy-bank"></i></span>
+                    </button>
+
+                    <button class="botao-operacao"
+                            type="button"
+                            data-conjunta="levantar">
+                        <span>Levantar para a minha conta</span>
+                        <span class="icone-operacao">⇄</span>
+                    </button>
+
+                    <button class="botao-operacao"
+                            type="button"
+                            data-conjunta="pagar">
+                        <span>Pagamento</span>
+                        <span class="icone-operacao">🛒</span>
+                    </button>
+
+                    <button class="botao-operacao"
+                            type="button"
+                            data-conjunta="membro">
+                        <span>Adicionar membro</span>
+                        <span class="icone-operacao"><i class="fa-solid fa-users"></i></span>
+                    </button>
+
+                    <button class="botao-operacao botao-operacao-perigo"
+                            type="button"
+                            data-conjunta="eliminar">
+                        <span>Eliminar conta conjunta</span>
+                        <span class="icone-operacao"><i class="fa-solid fa-trash"></i></span>
+                    </button>
+
+                </section>
+
+                <!-- Formulário de depósito / levantamento -->
+                <form id="formulario-movimento"
+                      class="formulario-transferencia formulario-conta"
+                      novalidate hidden>
+
+                    <label for="destinatario-pagamento" id="etiqueta-destinatario" hidden>Pagar a</label>
+                    <input id="destinatario-pagamento" type="text" maxlength="30"
+                           placeholder="Ex.: Bar, Restaurante" hidden>
+
+                    <label for="valor-movimento" id="etiqueta-movimento">Valor (€)</label>
+                    <input id="valor-movimento" type="number"
+                           min="0.01" step="0.01" inputmode="decimal"
+                           placeholder="0,00">
+
+                    <p class="mensagem-conta" id="erro-movimento" role="alert"></p>
+
+                    <button type="submit" id="botao-confirmar-movimento">Confirmar</button>
+                    <button type="button" class="botao-secundario"
+                            id="botao-cancelar-movimento">Cancelar</button>
+
+                </form>
+
+                <!-- Formulário para adicionar membro -->
+                <form id="formulario-membro"
+                      class="formulario-transferencia formulario-conta"
+                      novalidate hidden>
+
+                    <label for="email-novo-membro">Email do novo membro</label>
+                    <input id="email-novo-membro" type="email"
+                           placeholder="email@exemplo.com">
+
+                    <p class="mensagem-conta" id="erro-membro" role="alert"></p>
+
+                    <button type="submit">Adicionar</button>
+                    <button type="button" class="botao-secundario"
+                            id="botao-cancelar-membro">Cancelar</button>
+
+                </form>
+
+                <!-- Confirmação para eliminar a conta -->
+                <form id="formulario-eliminar"
+                      class="formulario-transferencia formulario-conta"
+                      novalidate hidden>
+
+                    <p class="texto-conta-conjunta" id="aviso-eliminar"></p>
+
+                    <button type="submit" class="botao-perigo">Eliminar conta</button>
+                    <button type="button" class="botao-secundario"
+                            id="botao-cancelar-eliminar">Cancelar</button>
+
+                </form>
+
+                <!-- Movimentos da conta conjunta -->
+                <section class="secao-movimentos">
+
+                    <h2>Movimentos da conta</h2>
+
+                    <div class="lista-movimentos" id="lista-movimentos-conjunta"></div>
+
+                </section>
+
+            </section>
+
+        </section>
+
+        <!-- Menu de navegação inferior -->
+        <nav class="barra-navegacao">
+
+            <a href="inicio.html" class="botao-navegacao">
+                <span class="icone-navegacao"><i class="fa-solid fa-house"></i></span>
+                <span>Início</span>
+            </a>
+
+
+            <a href="carteira.html"
+               class="botao-navegacao ativo">
+
+                <span class="icone-navegacao"><i class="fa-solid fa-wallet"></i></span>
+                <span>Carteira</span>
+
+            </a>
+
+
+            <a href="perfil.html" class="botao-navegacao">
+                <span class="icone-navegacao"><i class="fa-solid fa-user"></i></span>
+                <span>Perfil</span>
+            </a>
+
+        </nav>
+
+    </main>
+</body>
